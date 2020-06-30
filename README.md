@@ -1,2 +1,2 @@
-A simple poll app made with Django and jQuery
+A simple poll app made with Django and jQuery.
 
