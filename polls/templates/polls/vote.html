@@ -1,0 +1,39 @@
+{% extends "polls/base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mt-5">
+
+            <h3 class="card-header info-color white-text text-center py-4">
+                Cast your vote
+            </h3>
+            <div class="col-md-12">
+                <div class="card-body">
+                    <div>
+                        <h4>{{question}}</h4>
+                    </div>
+                    <hr>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <div class="radio">
+                                {% for choice in question.choice_set.all %}
+                                <label style="font-size: 1.2rem;">
+                                    <input type="radio" name="choice" value="{{choice.choice_text }}" required>
+                                    {{choice.choice_text }}
+                                </label> &nbsp;
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-info">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

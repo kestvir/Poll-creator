@@ -1,0 +1,31 @@
+.md-form input[type="text"]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid #33b5e5;
+    -webkit-box-shadow: 0 1px 0 0 #33b5e5;
+    box-shadow: 0 1px 0 0 #33b5e5;
+}
+
+input[type="text"] {
+    width: 96%
+}
+
+.created-input-wrapper {
+    position: relative;
+}
+
+.delete-choice-input {
+    position: absolute;
+    top: 7px;
+    right: 12px;
+}
+
+.delete-choice-input:hover {
+    cursor: pointer;
+}
+
+.fa-trash-alt {
+    color: #000;
+}
+
+.fa-trash-alt:hover {
+    color:#17a2b8
+}

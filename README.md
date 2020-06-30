@@ -1,0 +1,1 @@
+A simple poll app made with Django and jQuery.git remote add origin https://github.com/kestvir/Poll-creator.git

@@ -1,0 +1,29 @@
+{% extends "polls/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mt-5">
+
+            <h4 class="card-header bg-dark text-light text-center mb-4 py-4">
+                Poll Creator
+            </h4>
+
+            <div class="card-body px-lg-5 pt-0">
+                <form class="md-form" style="color: #757575;" method="POST">
+                    {% csrf_token %}
+
+                    {{ form|crispy}}
+                    <div class="choice-wrapper">
+                        {{ formset|crispy}}
+                    </div>
+                    <span class="btn btn-outline-info" id="add-choice">Add choice</span>
+
+                    <button class="btn btn-outline-info btn-block z-depth-0 my-4 waves-effect" type="submit">Create
+                        poll</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

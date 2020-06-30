@@ -1,0 +1,23 @@
+{% extends "polls/base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mt-5">
+            <div class="card-header bg-dark text-light text-center">
+                <h3>Active polls</h3>
+            </div>
+            <ul class="list-group list-group-flush">
+                {% for question in questions %}
+                <li class="list-group-item d-inline-flex align-items-center justify-content-between">
+                    <h4>{{question.question_text}}</h4>
+                    <div class="button-wrapper">
+                        <a href="{% url 'polls-vote' question.id %}" class="btn btn-dark">Vote</a>
+                        <a href="{% url 'polls-results' question.id %}" class="btn btn-info">View Results</a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}

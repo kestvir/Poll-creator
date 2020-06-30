@@ -1,0 +1,30 @@
+{% extends "polls/base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mt-5">
+
+            <h3 class="card-header info-color white-text text-center py-4">
+                Results
+            </h3>
+
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <h3>{{question.question_text}}</h3>
+                    </li>
+                    {% for choice in question.choice_set.all %}
+                    <li class="list-group-item">
+                        <div>{{choice.choice_text}} – <strong>{{choice.choice_count}}</strong></div>
+                    </li>
+                    {% endfor %}
+                    <li class="list-group-item">
+                        <div>Total – <strong>{{total}}</strong></div>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
